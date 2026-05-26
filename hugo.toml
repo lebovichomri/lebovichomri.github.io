@@ -1,4 +1,4 @@
-baseURL = "https://lebovichomri.github.io/"
+baseURL = "https://lebovichomri-art.github.io/"
 languageCode = "en-us"
 title = "Omri's Blog"
 theme = "PaperMod"
@@ -28,7 +28,7 @@ paginate = 10
 
 [[params.socialIcons]]
   name = "github"
-  url = "https://github.com/lebovichomri"
+  url = "https://github.com/lebovichomri-art"
 
 [params.assets]
   disableHLJS = false
