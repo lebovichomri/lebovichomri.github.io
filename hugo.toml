@@ -1,0 +1,43 @@
+baseURL = "https://lebovichomri.github.io/"
+languageCode = "en-us"
+title = "Omri's Blog"
+theme = "PaperMod"
+paginate = 10
+
+[params]
+  author = "Omri Lebovich"
+  description = "Security research, CTF writeups, and low-level topics."
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  showtoc = true
+  tocopen = false
+
+[params.homeInfoParams]
+  Title = "Hi, I'm Omri"
+  Content = "Security researcher. I write about vulnerability analysis, CTF writeups, and low-level topics."
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/lebovichomri"
+
+[params.assets]
+  disableHLJS = false
+
+[markup.highlight]
+  noClasses = false
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
