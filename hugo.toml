@@ -26,9 +26,6 @@ paginate = 10
   Title = "Hi, I'm Omri"
   Content = "Security researcher. I write about vulnerability analysis, CTF writeups, and low-level topics."
 
-[[params.socialIcons]]
-  name = "github"
-  url = "https://github.com/lebovichomri-art"
 
 [params.assets]
   disableHLJS = false
