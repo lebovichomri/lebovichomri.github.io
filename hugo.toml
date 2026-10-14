@@ -6,7 +6,7 @@ paginate = 10
 
 [params]
   author = "Omri Lebovich"
-  description = "Security research, CTF writeups, and low-level topics."
+  description = "A tech and science enthusiast. I write about cybersecurity, physics, mathematics, and more."
   defaultTheme = "auto"
   ShowReadingTime = true
   ShowShareButtons = false
@@ -23,8 +23,9 @@ paginate = 10
   tocopen = false
 
 [params.homeInfoParams]
-  Title = "Hi, I'm Omri"
-  Content = "Security researcher. I write about vulnerability analysis, CTF writeups, and low-level topics."
+  Title = "Hi, I'm Omri Lebovich"
+  Content = """A tech and science enthusiast.
+  I write about cybersecurity, physics, mathematics, and more."""
 
 
 [params.assets]
