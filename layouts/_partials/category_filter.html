@@ -1,0 +1,46 @@
+{{- /* Filters the home page post cards by category without leaving the page.
+       The selected category is kept in ?category= so filtered views can be
+       linked to and survive back/forward. */ -}}
+<script>
+(() => {
+  const nav = document.querySelector(".home-categories");
+  if (!nav) return;
+  const cards = document.querySelectorAll("article.post-entry[data-categories]");
+  const buttons = nav.querySelectorAll("[data-category]");
+
+  const apply = (slug) => {
+    if (![...buttons].some((b) => b.dataset.category === slug)) slug = "";
+    buttons.forEach((b) => b.setAttribute("aria-pressed", b.dataset.category === slug));
+    cards.forEach((card) => {
+      card.hidden = slug !== "" && !card.dataset.categories.split(" ").includes(slug);
+    });
+    return slug;
+  };
+
+  const select = (slug) => {
+    slug = apply(slug);
+    const url = new URL(location.href);
+    if (slug) url.searchParams.set("category", slug);
+    else url.searchParams.delete("category");
+    if (url.href !== location.href) history.pushState({ category: slug }, "", url);
+  };
+
+  nav.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-category]");
+    if (b) select(b.dataset.category);
+  });
+
+  // Chips inside cards link to /?category=x; handle them in place on home.
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("article.post-entry a.category-chip[data-category]");
+    if (!a || e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    select(a.dataset.category);
+    nav.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+
+  const fromUrl = () => apply(new URLSearchParams(location.search).get("category") || "");
+  window.addEventListener("popstate", fromUrl);
+  fromUrl();
+})();
+</script>

@@ -2,6 +2,7 @@
 date: '2023-11-26'
 draft: false
 title: 'PicoCTF2019 GhostDiary Writeup'
+categories: ['Cyber Security']
 ---
 
 ## Introduction

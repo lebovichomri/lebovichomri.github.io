@@ -2,6 +2,7 @@
 date: '2020-07-02'
 draft: false
 title: 'The Stack'
+categories: ['Cyber Security']
 ---
 
 ## Introduction

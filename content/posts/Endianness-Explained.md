@@ -2,6 +2,7 @@
 date: '2020-07-31'
 draft: false
 title: 'Endianness Explained'
+categories: ['Cyber Security']
 ---
 ## Introduction
 Endianness is the ordering of digital data in computer memory storage.<br/>

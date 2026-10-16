@@ -2,6 +2,7 @@
 date: '2022-05-31'
 draft: false
 title: 'MBE Lab7A Writeup'
+categories: ['Cyber Security']
 ---
 
 ## Introduction

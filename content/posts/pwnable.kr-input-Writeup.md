@@ -2,6 +2,7 @@
 date: '2024-11-12'
 draft: false
 title: 'Pwnable.kr Input Writeup'
+categories: ['Cyber Security']
 ---
 
 ## Introduction

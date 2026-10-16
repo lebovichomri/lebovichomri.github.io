@@ -1,0 +1,11 @@
+{{- /* Category links for a single page. They point at the home page filter
+       (?category=slug); on home the filter script intercepts the click. Lifted
+       above .entry-link in CSS so they stay clickable inside list cards. */ -}}
+{{- with .GetTerms "categories" }}
+<span class="category-chips">
+  {{- range . }}
+  {{- $slug := urlize .LinkTitle }}
+  <a class="category-chip" href="{{ printf "/?category=%s" $slug | relURL }}" data-category="{{ $slug }}">{{ .LinkTitle }}</a>
+  {{- end }}
+</span>
+{{- end }}

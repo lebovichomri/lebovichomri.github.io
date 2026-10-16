@@ -39,3 +39,10 @@ paginate = 10
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
+[menu]
+  [[menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "/categories/"
+    weight = 10

@@ -1,0 +1,22 @@
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content md-content">
+        {{ $opts := dict "display" "block" }}
+        {{ .Content | $.Page.RenderString $opts }}
+    </div>
+    {{- with site.Taxonomies.categories }}
+    <nav class="home-categories" aria-label="Categories">
+        <button type="button" class="category-chip" data-category="" aria-pressed="true">All</button>
+        {{- range .ByCount }}
+        <button type="button" class="category-chip" data-category="{{ urlize .Page.LinkTitle }}" aria-pressed="false">{{ .Page.LinkTitle }} <sup>{{ .Count }}</sup></button>
+        {{- end }}
+    </nav>
+    {{- end }}
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+{{- end -}}

@@ -1,0 +1,55 @@
+.category-chips {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-inline-end: 8px;
+}
+
+.category-chip {
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 13px;
+    line-height: 24px;
+    color: var(--secondary);
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.category-chip:hover {
+    color: var(--primary);
+    background: var(--border);
+}
+
+/* .entry-link covers the whole card; keep chips clickable on top of it */
+.post-entry .category-chip {
+    position: relative;
+    z-index: 1;
+}
+
+.home-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.home-categories .category-chip {
+    font-size: 14px;
+    line-height: 30px;
+}
+
+button.category-chip {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.home-categories .category-chip[aria-pressed="true"] {
+    color: var(--theme);
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.post-entry[hidden] {
+    display: none;
+}

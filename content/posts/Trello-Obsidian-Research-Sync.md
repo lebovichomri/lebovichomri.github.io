@@ -2,6 +2,7 @@
 date: '2026-10-14'
 draft: false
 title: 'Trello Obsidian Research Sync'
+categories: ['Productivity']
 ---
 
 ## Introduction

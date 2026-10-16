@@ -1,0 +1,39 @@
+{{- /* Renders mermaid code fences as diagrams. PaperMod ships this partial
+       empty on purpose as an extension hook, so overriding it adds the script
+       without replacing any theme markup. Gated on the page actually
+       containing a mermaid fence so the library is only fetched where needed. */ -}}
+{{- if findRE "```mermaid" .RawContent -}}
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.6.0/dist/mermaid.esm.min.mjs";
+
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: "neutral",
+    securityLevel: "loose",
+    fontFamily: "inherit",
+  });
+
+  const draw = async () => {
+    const blocks = document.querySelectorAll("pre > code.language-mermaid");
+    for (const [i, code] of [...blocks].entries()) {
+      try {
+        const { svg } = await mermaid.render("mmd" + i, code.textContent);
+        const holder = document.createElement("div");
+        holder.className = "mermaid-rendered";
+        holder.innerHTML = svg;
+        code.parentElement.replaceWith(holder);
+      } catch (err) {
+        // Leave the original code block in place so the diagram source stays readable.
+        console.error("mermaid render failed", err);
+      }
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", draw);
+  } else {
+    draw();
+  }
+</script>
+{{- end -}}
+{{- if .IsHome }}{{ partial "category_filter.html" . }}{{ end -}}
