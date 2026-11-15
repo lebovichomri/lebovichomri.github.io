@@ -34,6 +34,10 @@ paginate = 10
 [markup.highlight]
   noClasses = false
 
+[markup.tableOfContents]
+  startLevel = 1
+  endLevel = 3
+
 [markup.goldmark.renderer]
   unsafe = true
 
